@@ -1,0 +1,15 @@
+.wrapper {
+  margin-top: 30px;
+  display: flex;
+}
+
+.item {
+  padding: 10px;
+  border: 1px solid var(--accent);
+  cursor: pointer;
+}
+
+.active {
+  border: 2px solid var(--red);
+  font-weight: bold;
+}

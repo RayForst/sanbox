@@ -1,0 +1,17 @@
+.post {
+  display: flex;
+  padding: 1rem;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p {
+  white-space: pre-line;
+}
+
+.post__btns {
+  display: flex;
+}

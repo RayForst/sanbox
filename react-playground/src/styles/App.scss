@@ -1,0 +1,97 @@
+:root {
+  --bg: #fff;
+  --main: #427aa1;
+  --secondary: #427aa1;
+  --accent: #822e81;
+  --red: #ff2400;
+  --text: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  //   color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+input {
+  border: 2px solid var(--accent);
+  background: var(--bg);
+}
+#root {
+  display: flex;
+  justify-content: center;
+  min-width: 80vw;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.App {
+  width: 100%;
+  padding: 2.5rem 2rem;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+button + button {
+  margin-left: 0.5rem;
+}
+
+.component {
+  border: 1px solid var(--accent);
+  padding: 2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.component + .component {
+  margin-top: 1rem;
+}
+
+.post-enter {
+  transform: translateX(-350px);
+}
+.post-enter-active {
+  transform: translateX(0);
+  transition: all 500ms ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  transform: translateX(-350px);
+  transition: all 500ms ease-in;
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+
+  &__page {
+    padding: 10px;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+
+    &.current {
+      border: 2px solid var(--red);
+      font-weight: bold;
+    }
+  }
+}

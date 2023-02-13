@@ -1,0 +1,113 @@
+%youtube-gradient {
+  background-color: #e35044;
+  background-image: linear-gradient(to right, #e35044 1%, #d63e30 100%);
+}
+
+.youtubeLogo {
+  $white: #f2f0e6;
+  $width: 64px;
+  $height: 32px;
+  $fade-height: 2px;
+  $main-border-radius: 15px;
+
+  @extend %youtube-gradient;
+  position: relative;
+  width: $width;
+  height: $height - $fade-height * 2;
+  border-top-left-radius: $main-border-radius 50%;
+  border-top-right-radius: $main-border-radius 50%;
+  border-bottom-left-radius: $main-border-radius 50%;
+  border-bottom-right-radius: $main-border-radius 50%;
+  width: 44px;
+  height: 24px;
+  border-radius: 8px;
+
+  &:before {
+    visibility: hidden;
+    position: absolute;
+    content: " ";
+    border-top-left-radius: 50% $fade-height;
+    border-top-right-radius: 50% $fade-height;
+    border-bottom-left-radius: 50% $fade-height;
+    border-bottom-right-radius: 50% $fade-height;
+
+    @extend %youtube-gradient;
+    width: $width - ($main-border-radius * 2);
+    height: $height;
+    left: $main-border-radius;
+    top: -$fade-height;
+  }
+
+  &:after {
+    position: absolute;
+    content: " ";
+    border-top: transparent 7px solid;
+    border-bottom: transparent 7px solid;
+    border-left: $white 10px solid;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -4px;
+  }
+}
+
+.youtubeContainer {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-right: 6rem;
+}
+
+.sourceContainer {
+  display: flex;
+  font-size: 1.25rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.completed {
+  position: relative;
+
+  &::after {
+    width: 80px;
+    content: "completed";
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    background: green;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+
+    // transform: translateX(calc(100% + 0.5rem));
+  }
+}
+
+.inProgress {
+  position: relative;
+
+  &::after {
+    width: 90px;
+    content: "In progress";
+    position: absolute;
+    right: 0rem;
+    top: 0;
+    background: blue;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    // transform: translateX(calc(100% + 0.5rem));
+  }
+}
+
+.duration {
+  color: blue;
+  margin-right: 4px;
+  font-weight: bold;
+}
